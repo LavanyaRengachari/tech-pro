@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechPro | Technical Training Institute</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+}
+
+header {
+  background: #101b35;
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00c6ff;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #00c6ff;
+}
+
+nav a.active {
+  color: #00c6ff;
+}
+
+nav a.nav-btn.active {
+  color: white;
+}
+
+.nav-btn, .btn {
+  background: #007bff;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero {
+  min-height: 520px;
+  background: linear-gradient(120deg, #101b35, #164e83);
+  display: flex;
+  align-items: center;
+  padding: 60px 9%;
+  color: white;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tagline {
+  color: #00c6ff;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #00c6ff;
+}
+
+.hero-content p {
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid white;
+  margin-left: 10px;
+}
+
+.features {
+  padding: 65px 8%;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+.feature-container {
+  display: flex;
+  gap: 25px;
+}
+
+.feature-card {
+  flex: 1;
+  background: white;
+  padding: 35px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
+}
+
+.feature-card h3 {
+  color: #0878cf;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  line-height: 1.6;
+}
+
+.cta {
+  background: #e8f3ff;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  margin-bottom: 15px;
+}
+
+.cta p {
+  margin-bottom: 25px;
+}
+
+footer {
+  background: #101b35;
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
+
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .feature-container {
+    flex-direction: column;
+  }
+}
+
+.page-heading {
+  background: #164e83;
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.page-heading h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.course-container {
+  padding: 60px 8%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.course-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000015;
+  transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+}
+
+.course-card h2 {
+  color: #0878cf;
+  margin-bottom: 15px;
+}
+
+.course-card p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.course-card h4 {
+  margin-bottom: 20px;
+}
+
+@media(max-width: 768px) {
+  .course-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-section {
+  padding: 60px 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.about-content {
+  grid-column: span 2;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  line-height: 1.8;
+}
+
+.about-content h2,
+.about-box h2 {
+  color: #0878cf;
+  margin-bottom: 15px;
+}
+
+.about-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
+  line-height: 1.7;
+}
+
+@media(max-width: 768px) {
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    grid-column: span 1;
+  }
+}
+
+.contact-section {
+  padding: 60px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.contact-info,
+.contact-form {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  color: #0878cf;
+  margin-bottom: 25px;
+}
+
+.contact-info p {
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+}
+
+@media(max-width: 768px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.registration-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#registrationForm {
+  background: white;
+  padding: 35px;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px #00000015;
+}
+
+#registrationForm h2 {
+  text-align: center;
+  color: #0878cf;
+  margin-bottom: 25px;
+}
+
+#registrationForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#registrationForm input,
+#registrationForm select {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#registrationForm button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+#formMessage {
+  text-align: center;
+  margin-top: 15px;
+  color: green;
+}
+
+#formMessage.error {
+  color: #c62828;
+}
+
+/* ---- Admin dashboard ---- */
+
+.cards {
+  padding: 40px 8% 0;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.cards .card {
+  min-width: 220px;
+}
+
+.card {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000012;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: #0878cf;
+  margin-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.7;
+}
+
+.container {
+  padding: 40px 8% 60px;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+#searchStudent {
+  width: 100%;
+  max-width: 420px;
+  padding: 13px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+#studentList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#studentList .card {
+  margin-bottom: 0;
+}
+
+.empty-note {
+  color: #666;
+  line-height: 1.7;
+}
+
+@media(max-width: 768px) {
+  #studentList {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Page routing ---- */
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Tech<span>Pro</span></div>
+    <nav>
+        <a href="#home" data-nav="home">Home</a>
+        <a href="#courses" data-nav="courses">Courses</a>
+        <a href="#about" data-nav="about">About</a>
+        <a href="#contact" data-nav="contact">Contact</a>
+        <a href="#admin" data-nav="admin">Admin</a>
+        <a href="#register" data-nav="register" class="nav-btn">Register</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div class="page" id="page-home">
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tagline">WELCOME TO TECHPRO INSTITUTE</p>
+
+            <h1>Build Your Future With <span>Technology</span></h1>
+
+            <p>
+                Learn in-demand technical skills with expert trainers.
+                Develop your knowledge and prepare for a successful career.
+            </p>
+
+            <a href="#courses" class="btn">Explore Courses</a>
+            <a href="#register" class="btn secondary">Join Now</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose TechPro?</h2>
+
+        <div class="feature-container">
+            <div class="feature-card">
+                <h3>Expert Trainers</h3>
+                <p>Learn from experienced technical professionals.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Practical Learning</h3>
+                <p>Gain real-world experience through practical training.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Career Support</h3>
+                <p>Improve your skills and prepare for job opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Start Learning Today!</h2>
+        <p>Take the next step towards your dream career.</p>
+        <a href="#register" class="btn">Register Now</a>
+    </section>
+
+</div>
+
+<!-- ============ COURSES ============ -->
+<div class="page" id="page-courses">
+
+    <section class="page-heading">
+        <h1>Our Training Courses</h1>
+        <p>Explore the right course to build your technical career.</p>
+    </section>
+
+    <section class="course-container">
+
+        <div class="course-card">
+            <h2>Python Programming</h2>
+            <p>Learn Python fundamentals, programming concepts and real-world applications.</p>
+            <h4>Duration: 3 Months</h4>
+            <a href="#register" class="btn">Enroll Now</a>
+        </div>
+
+        <div class="course-card">
+            <h2>Java Programming</h2>
+            <p>Master Java, object-oriented programming and application development.</p>
+            <h4>Duration: 3 Months</h4>
+            <a href="#register" class="btn">Enroll Now</a>
+        </div>
+
+        <div class="course-card">
+            <h2>Web Development</h2>
+            <p>Learn HTML, CSS, JavaScript and create interactive websites.</p>
+            <h4>Duration: 4 Months</h4>
+            <a href="#register" class="btn">Enroll Now</a>
+        </div>
+
+        <div class="course-card">
+            <h2>Data Analytics</h2>
+            <p>Learn Excel, SQL, Power BI and data visualization techniques.</p>
+            <h4>Duration: 4 Months</h4>
+            <a href="#register" class="btn">Enroll Now</a>
+        </div>
+
+        <div class="course-card">
+            <h2>Full Stack Development</h2>
+            <p>Learn frontend, backend and database development.</p>
+            <h4>Duration: 6 Months</h4>
+            <a href="#register" class="btn">Enroll Now</a>
+        </div>
+
+        <div class="course-card">
+            <h2>UI/UX Design</h2>
+            <p>Understand user interface design and user experience principles.</p>
+            <h4>Duration: 2 Months</h4>
+            <a href="#register" class="btn">Enroll Now</a>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="page-about">
+
+    <section class="page-heading">
+        <h1>About TechPro</h1>
+        <p>Empowering Students Through Technology</p>
+    </section>
+
+    <section class="about-section">
+
+        <div class="about-content">
+            <h2>Who We Are</h2>
+
+            <p>
+                TechPro Technical Training Institute is dedicated to
+                providing quality technical education and professional
+                skill development.
+            </p>
+
+            <p>
+                We offer industry-oriented training programs that help
+                students improve their technical knowledge, practical
+                skills and career opportunities.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h2>Our Vision</h2>
+            <p>
+                To become a leading technical training institute
+                that creates skilled and confident professionals.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h2>Our Mission</h2>
+            <p>
+                To provide affordable, practical and quality
+                technical education to every learner.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="features">
+        <h2>Our Facilities</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <h3>Modern Labs</h3>
+                <p>Practical computer training with modern facilities.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Expert Faculty</h3>
+                <p>Experienced trainers to guide every student.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Career Guidance</h3>
+                <p>Professional guidance for future career growth.</p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="page-contact">
+
+    <section class="page-heading">
+        <h1>Contact Us</h1>
+        <p>We are always ready to help you!</p>
+    </section>
+
+    <section class="contact-section">
+
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+
+            <p><strong>Institute:</strong> TechPro Technical Training Institute</p>
+
+            <p><strong>Email:</strong> info@techpro.com</p>
+
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+
+            <p><strong>Address:</strong> Tamil Nadu, India</p>
+
+            <p><strong>Working Hours:</strong> Monday - Saturday</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+
+                <input type="text" id="contactName"
+                placeholder="Your Name" required>
+
+                <input type="email" id="contactEmail"
+                placeholder="Your Email" required>
+
+                <input type="text" id="contactSubject"
+                placeholder="Subject" required>
+
+                <textarea id="contactMessage"
+                placeholder="Your Message" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+
+            </form>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- ============ REGISTER ============ -->
+<div class="page" id="page-register">
+
+    <section class="page-heading">
+        <h1>Student Registration</h1>
+        <p>Join TechPro and build your future!</p>
+    </section>
+
+    <section class="registration-section">
+
+        <form id="registrationForm">
+
+            <h2>Registration Form</h2>
+
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName"
+            placeholder="Enter your full name" required>
+
+            <label for="studentEmail">Email Address</label>
+            <input type="email" id="studentEmail"
+            placeholder="Enter your email" required>
+
+            <label for="studentPhone">Phone Number</label>
+            <input type="tel" id="studentPhone"
+            placeholder="Enter 10 digit number"
+            maxlength="10" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <label for="qualification">Qualification</label>
+            <select id="qualification" required>
+                <option value="">Select Qualification</option>
+                <option>School Student</option>
+                <option>Diploma</option>
+                <option>UG</option>
+                <option>PG</option>
+                <option>Others</option>
+            </select>
+
+            <label for="course">Select Course</label>
+            <select id="course" required>
+                <option value="">Choose a Course</option>
+                <option>Python Programming</option>
+                <option>Java Programming</option>
+                <option>Web Development</option>
+                <option>Data Analytics</option>
+                <option>Full Stack Development</option>
+                <option>UI/UX Design</option>
+            </select>
+
+            <button type="submit" class="btn">
+                Submit Registration
+            </button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </section>
+
+</div>
+
+<!-- ============ ADMIN ============ -->
+<div class="page" id="page-admin">
+
+    <section class="page-heading">
+        <h1>Admin Dashboard</h1>
+        <p>Manage Student Registrations</p>
+    </section>
+
+    <section class="cards">
+        <div class="card">
+            <h3>Total Students</h3>
+            <h2 id="totalStudents">0</h2>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Registered Students</h2>
+
+        <input type="text" id="searchStudent"
+               placeholder="Search student...">
+
+        <div id="studentList"></div>
+    </section>
+
+</div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 TechPro Technical Training Institute. All Rights Reserved.</p>
+</footer>
+
+<script>
+/* =========================================================
+   TechPro - merged single-file build
+   Pages, registration, contact form and admin dashboard.
+   ========================================================= */
+
+/* ---------- Configuration ----------
+   If the Express/MongoDB backend (server.js) is running,
+   set API_BASE to its address, e.g. "http://localhost:5000".
+   When the API is unreachable, registrations are stored in
+   this browser's localStorage so the site still works on its own.
+---------------------------------------------------------- */
+const API_BASE = "";
+const STORAGE_KEY = "techpro_students";
+
+
+/* ===================== ROUTING ===================== */
+
+const PAGES = ["home", "courses", "about", "contact", "register", "admin"];
+
+function showPage(name) {
+    if (!PAGES.includes(name)) {
+        name = "home";
+    }
+
+    PAGES.forEach(page => {
+        const section = document.getElementById("page-" + page);
+        if (section) {
+            section.classList.toggle("active", page === name);
+        }
+    });
+
+    document.querySelectorAll("nav a[data-nav]").forEach(link => {
+        link.classList.toggle("active", link.dataset.nav === name);
+    });
+
+    if (name === "admin") {
+        loadStudents();
+    }
+
+    window.scrollTo(0, 0);
+}
+
+function currentPage() {
+    return window.location.hash.replace(/^#\/?/, "") || "home";
+}
+
+window.addEventListener("hashchange", () => showPage(currentPage()));
+
+
+/* ===================== STORAGE HELPERS ===================== */
+
+function readLocalStudents() {
+    try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveLocalStudent(student) {
+    const students = readLocalStudents();
+
+    const duplicate = students.find(item =>
+        item.email === student.email || item.phone === student.phone
+    );
+
+    if (duplicate) {
+        if (duplicate.email === student.email) {
+            throw new Error("Email already registered!");
+        }
+        throw new Error("Phone number already registered!");
+    }
+
+    students.push(student);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
+}
+
+async function fetchStudents() {
+    if (API_BASE) {
+        try {
+            const response = await fetch(API_BASE + "/students");
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (error) {
+            console.log("Falling back to local storage:", error);
+        }
+    }
+
+    return readLocalStudents();
+}
+
+
+/* ===================== STUDENT REGISTRATION ===================== */
+
+const form = document.getElementById("registrationForm");
+const formMessage = document.getElementById("formMessage");
+
+function setFormMessage(text, isError) {
+    formMessage.innerText = text;
+    formMessage.classList.toggle("error", Boolean(isError));
+}
+
+if (form) {
+    form.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const student = {
+            name: document.getElementById("studentName").value.trim(),
+            email: document.getElementById("studentEmail").value.trim().toLowerCase(),
+            phone: document.getElementById("studentPhone").value.trim(),
+            gender: document.getElementById("gender").value,
+            qualification: document.getElementById("qualification").value,
+            course: document.getElementById("course").value
+        };
+
+        if (!/^\d{10}$/.test(student.phone)) {
+            setFormMessage("Please enter a valid 10 digit phone number.", true);
+            return;
+        }
+
+        if (API_BASE) {
+            try {
+                const response = await fetch(API_BASE + "/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(student)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    setFormMessage("Registration Successful!", false);
+                    form.reset();
+                } else {
+                    setFormMessage(result.message || "Registration Failed!", true);
+                }
+
+                return;
+
+            } catch (error) {
+                console.log("Server unreachable, saving locally:", error);
+            }
+        }
+
+        try {
+            saveLocalStudent(student);
+            setFormMessage("Registration Successful!", false);
+            form.reset();
+        } catch (error) {
+            setFormMessage(error.message, true);
+        }
+    });
+}
+
+
+/* ===================== CONTACT FORM ===================== */
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Thank you for contacting TechPro!");
+        contactForm.reset();
+    });
+}
+
+
+/* ===================== ADMIN DASHBOARD ===================== */
+
+function escapeHtml(value) {
+    return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+function displayStudents(students) {
+
+    const list = document.getElementById("studentList");
+
+    if (!students.length) {
+        list.innerHTML =
+            '<p class="empty-note">No student registrations found yet.</p>';
+        return;
+    }
+
+    let output = "";
+
+    students.forEach(student => {
+        output += `
+            <div class="card">
+                <h3>${escapeHtml(student.name)}</h3>
+                <p>Email: ${escapeHtml(student.email)}</p>
+                <p>Phone: ${escapeHtml(student.phone)}</p>
+                <p>Course: ${escapeHtml(student.course)}</p>
+            </div>
+        `;
+    });
+
+    list.innerHTML = output;
+}
+
+async function loadStudents() {
+    const students = await fetchStudents();
+
+    document.getElementById("totalStudents").innerText = students.length;
+
+    const search = document.getElementById("searchStudent")
+        .value.trim().toLowerCase();
+
+    if (!search) {
+        displayStudents(students);
+        return;
+    }
+
+    displayStudents(students.filter(student =>
+        String(student.name || "").toLowerCase().includes(search) ||
+        String(student.email || "").toLowerCase().includes(search)
+    ));
+}
+
+document.getElementById("searchStudent")
+    .addEventListener("input", loadStudents);
+
+
+/* ===================== INIT ===================== */
+
+console.log("TechPro Website Loaded Successfully!");
+showPage(currentPage());
+</script>
+
+</body>
+</html>
